@@ -2,7 +2,7 @@ from sklearn.linear_model import LinearRegression
 import pickle
 import pandas as pd
 
-from ..settings import MODELS_PATH, DATASETS_PATH
+from settings import MODELS_PATH, DATASETS_PATH
  
 df = pd.read_csv(f'{DATASETS_PATH}data_test.csv', header=None)
 df.columns = ['id', 'counts']

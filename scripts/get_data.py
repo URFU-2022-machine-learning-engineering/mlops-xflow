@@ -3,7 +3,7 @@ import mlflow
 import requests
 import json
 from pyyoutube import Api
-from ..settings import SCRIPTS_PATH, DATASETS_PATH, API_KEY, BASIC_PATH, ML_FLOW_TRACKING_URI
+from settings import SCRIPTS_PATH, DATASETS_PATH, API_KEY, BASIC_PATH, ML_FLOW_TRACKING_URI
 
 os.environ["MLFLOW_REGISTRY_URI"] = f"{BASIC_PATH}mlflow/"
 mlflow.set_tracking_uri(ML_FLOW_TRACKING_URI)

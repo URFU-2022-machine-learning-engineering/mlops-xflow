@@ -5,7 +5,7 @@ import mlflow
 import pandas as pd
  
 
-from ..settings import DATASETS_PATH, SCRIPTS_PATH, MODELS_PATH, ML_FLOW_TRACKING_URI
+from settings import DATASETS_PATH, SCRIPTS_PATH, MODELS_PATH, ML_FLOW_TRACKING_URI
  
 mlflow.set_tracking_uri(ML_FLOW_TRACKING_URI)
 mlflow.set_experiment("train_model")

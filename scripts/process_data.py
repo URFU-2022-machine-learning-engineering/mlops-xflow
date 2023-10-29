@@ -1,6 +1,6 @@
 import pandas as pd
 
-from ..settings import DATASETS_PATH
+from settings import DATASETS_PATH
  
 df = pd.read_csv(f'{DATASETS_PATH}data.csv', header=None)
  
