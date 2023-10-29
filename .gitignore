@@ -1,0 +1,14 @@
+venv
+.env
+datasets
+airflow/logs
+airflow/airflow.cfg
+airflow/airflow.db
+airflow/*.log
+airflow/*.pid
+airflow/*.err
+airflow/*.out
+__pycache__
+*.pyc
+webserver_config.py
+
