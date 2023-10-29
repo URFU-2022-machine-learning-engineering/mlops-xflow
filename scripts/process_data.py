@@ -1,9 +1,11 @@
 import pandas as pd
+
+from ..settings import DATASETS_PATH
  
-df = pd.read_csv('/home/dzailz/project/datasets/data.csv', header=None)
+df = pd.read_csv(f'{DATASETS_PATH}data.csv', header=None)
  
 df[0] = (df[0]-df[0].min())/(df[0].max()-df[0].min())
  
-with open('/home/dzailz/project/datasets/data_processed.csv', 'w') as f:
+with open(f'{DATASETS_PATH}data_processed.csv', 'w') as f:
     for i, item in enumerate(df[0].values):
         f.write("{},{}\n".format(i, item))

@@ -3,10 +3,10 @@ import mlflow
 import requests
 import json
 from pyyoutube import Api
-from ..settitng import SCRIPTS_PATH, DATASETS_PATH, API_KEY
+from ..settings import SCRIPTS_PATH, DATASETS_PATH, API_KEY, BASIC_PATH, ML_FLOW_TRACKING_URI
 
-os.environ["MLFLOW_REGISTRY_URI"] = "/home/xflow/project/mlflow/"
-mlflow.set_tracking_uri("http://localhost:5000")
+os.environ["MLFLOW_REGISTRY_URI"] = f"{BASIC_PATH}mlflow/"
+mlflow.set_tracking_uri(ML_FLOW_TRACKING_URI)
 mlflow.set_experiment("get_data")
  
 api = Api(api_key=API_KEY)
@@ -25,7 +25,7 @@ with mlflow.start_run():
               "videoId={}&" + \
               "maxResults={}&" + \
               "pageToken={}"
-        uri = uri.format(key, id_, maxResults, nextPageToken)
+        uri = uri.format(API_KEY, id_, maxResults, nextPageToken)
         content = requests.get(uri).text
         data = json.loads(content)
         for item in data['items']:
