@@ -1,6 +1,8 @@
 venv
 .env
 datasets
+mlflow
+models
 airflow/logs
 airflow/airflow.cfg
 airflow/airflow.db
