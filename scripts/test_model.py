@@ -7,8 +7,6 @@ from settings import MODELS_PATH, DATASETS_PATH
 # Загрузка данных для тестирования модели
 df = pd.read_csv(f'{DATASETS_PATH}data_test.csv', header=None)
 df.columns = ['id', 'counts']
- 
-model = LinearRegression()
 
 # Загрузка ранее сохраненной модели
 with open(f'{MODELS_PATH}data.pickle', 'rb') as f:
